@@ -79,10 +79,10 @@ const ItemDetail = ({
 
           <CheckableLists itemId={item.id} />
 
+          {ldaItems.length > 0 && <RelatedItemsModule items={ldaItems} />}
+
         </div>
       </div>
-
-      {ldaItems.length > 0 && <RelatedItemsModule items={ldaItems} />}
 
     </MainLayout>
   );
