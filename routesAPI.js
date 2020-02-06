@@ -96,7 +96,7 @@ module.exports = (app, server) => {
     proxy(process.env.API_URL, {
       proxyReqPathResolver: function(req) {
         const itemId = req.url.split("/").pop();
-        const apiUrl = process.env.API_URL;
+        const apiUrl = process.env.API_URL.replace(/\/$/, "");
         const apiKey = process.env.API_KEY;
         const version = (process.env.API_VERSION || "v2");
         return `${apiUrl}/${version}/items/${itemId}/lda?api_key=${apiKey}&page_size=10`;
